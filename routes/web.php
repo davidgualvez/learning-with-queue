@@ -9,8 +9,10 @@
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+*/ 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'PageController@normalRequest')->name('normal');
+Route::post('/', 'PageController@sendingNormalRequest')->name('normal');
+
+Route::get('/queued-request', 'PageController@queuedRequest')->name('queued');
+Route::post('/queued-request', 'PageController@sendingQueuedRequest')->name('queued');
