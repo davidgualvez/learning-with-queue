@@ -46,7 +46,7 @@ class PageController extends Controller
         $arr = array_merge(
             $request->all(),
             [
-                'request_type' => 'normal'
+                'request_type' => 'queue'
             ]
         );
   
